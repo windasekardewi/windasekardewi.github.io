@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Resume of Winda Sekar Dewi — Senior Technical Program Manager with 6+ years delivering complex SaaS programs across accounting, compliance, and digital signature domains." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://windasekardewi.github.io/resume" />
+  <meta property="og:url" content="https://windasekardewi.github.io/resume.html" />
   <meta property="og:title" content="Resume · Winda Sekar Dewi" />
   <meta property="og:description" content="Senior Technical Program Manager with 6+ years delivering complex SaaS programs across accounting, compliance, and digital signature domains." />
   <meta property="og:image" content="https://windasekardewi.github.io/og-image.png" />
@@ -21,7 +21,7 @@
   <style>
     .resume-section { margin-bottom: 2.5rem; }
 
-    .skill-groups { display: flex; flex-direction: column; gap: 1rem; }
+    .skill-groups { display: flex; flex-direction: column; gap: 1.25rem; }
     .skill-group-label {
       font-size: 11px;
       font-weight: 500;
@@ -44,8 +44,8 @@
       padding: 4px 10px;
     }
 
-    .cert-list { display: flex; flex-direction: column; gap: 0; }
-    .cert-item {
+    .cert-list, .pub-list { display: flex; flex-direction: column; gap: 0; }
+    .cert-item, .pub-item {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
@@ -53,15 +53,41 @@
       border-bottom: 0.5px solid var(--border);
       gap: 1rem;
     }
-    .cert-item:last-child { border-bottom: none; }
-    .cert-name { font-size: 14px; color: var(--text); font-weight: 500; }
-    .cert-issuer { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .cert-item:last-child, .pub-item:last-child { border-bottom: none; }
+    .cert-name, .pub-name { font-size: 14px; color: var(--text); font-weight: 500; }
+    .cert-issuer, .pub-venue { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
     .cert-year { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
 
-    .edu-item { padding: 10px 0; }
+    .edu-list { display: flex; flex-direction: column; gap: 0; }
+    .edu-item {
+      padding: 10px 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .edu-item:last-child { border-bottom: none; }
     .edu-school { font-size: 14px; font-weight: 500; color: var(--text); }
     .edu-degree { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
     .edu-year { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    .award-item {
+      padding: 10px 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .award-item:last-child { border-bottom: none; }
+    .award-name { font-size: 14px; font-weight: 500; color: var(--text); }
+    .award-org { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 0.5px solid var(--border);
+      font-size: 14px;
+    }
+    .lang-row:last-child { border-bottom: none; }
+    .lang-name { color: var(--text); }
+    .lang-level { color: var(--text-muted); font-size: 12px; }
+
+    .tl-item-compact { padding-bottom: 1.5rem; }
   </style>
 </head>
 <body>
@@ -90,7 +116,7 @@
 
     <!-- SKILLS -->
     <section class="resume-section">
-      <div class="section-label">Core Skills</div>
+      <div class="section-label">Skills</div>
       <div class="skill-groups">
 
         <div>
@@ -131,33 +157,17 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <hr class="divider" />
-
-    <!-- TOOLS -->
-    <section class="resume-section">
-      <div class="section-label">Tools</div>
-      <div class="skill-groups">
-
         <div>
-          <div class="skill-group-label">Project &amp; Collaboration</div>
+          <div class="skill-group-label">Tools &amp; Automation</div>
           <div class="skill-tags">
             <span class="skill-tag">Jira</span>
             <span class="skill-tag">Confluence</span>
             <span class="skill-tag">Bitbucket</span>
             <span class="skill-tag">Notion</span>
-          </div>
-        </div>
-
-        <div>
-          <div class="skill-group-label">Automation &amp; AI</div>
-          <div class="skill-tags">
             <span class="skill-tag">Atlassian MCP</span>
             <span class="skill-tag">AI-augmented Workflows</span>
             <span class="skill-tag">Automation Scripting</span>
-            <span class="skill-tag">Bulk Issue Resolution</span>
+            <span class="skill-tag">Artificial Intelligence (AI)</span>
           </div>
         </div>
 
@@ -178,12 +188,12 @@
           </div>
           <div class="tl-content">
             <div class="tl-company">Mekari</div>
-            <div class="tl-role">Senior TPM – Compliance (Mekari Sign)</div>
-            <div class="tl-date">May 2026 – Present</div>
+            <div class="tl-role">Senior Technical Program Manager – Compliance (Mekari Sign)</div>
+            <div class="tl-date">May 2026 – Present &middot; Jakarta, Indonesia</div>
             <ul class="tl-bullets">
               <li>Manages program delivery for Mekari Sign's compliance domain, overseeing digital signature and corporate stamp certificate product areas</li>
-              <li>Tracks and escalates third-party PSrE integration risks across internal engineering teams and external compliance partners</li>
-              <li>Applies AI-augmented workflows including custom automation skills and Atlassian MCP integration (Jira, Confluence, Bitbucket) to reduce manual TPM overhead</li>
+              <li>Tracks and escalates third-party PSrE integration risks, coordinating between internal engineering teams and external compliance partners</li>
+              <li>Applies AI-augmented workflows including custom automation skills, Atlassian MCP integration (Jira, Confluence, Bitbucket), and AI-assisted risk frameworks to reduce manual TPM overhead</li>
               <li>Orchestrates tribe OKR alignment and initiative creation, translating quarterly Key Results into structured epics</li>
             </ul>
           </div>
@@ -196,12 +206,13 @@
           </div>
           <div class="tl-content">
             <div class="tl-company">Mekari</div>
-            <div class="tl-role">Senior TPM – Accounting &amp; Tax</div>
-            <div class="tl-date">Feb 2025 – May 2026 &middot; 1 yr 4 mos</div>
+            <div class="tl-role">Senior Technical Program Manager – Accounting &amp; Tax</div>
+            <div class="tl-date">Feb 2025 – May 2026 &middot; 1 yr 4 mos &middot; Jakarta, Indonesia</div>
             <ul class="tl-bullets">
-              <li>Led the SCM Rewrite project across all Jurnal teams, introducing new COGS calculation for AVG and FIFO costing methods</li>
+              <li>Led the SCM Rewrite project across all Mekari Jurnal teams, introducing new COGS calculation for AVG and FIFO costing methods</li>
               <li>Managed tax management programs including eBupot and SPT Masa for Coretax as part of the Tax Application Provider initiative</li>
-              <li>Developed internal tooling and automation to accelerate program operations, including bulk issue resolution workflows and data-driven delivery tracking</li>
+              <li>Developed internal tooling and automation including bulk issue resolution workflows and data-driven delivery tracking</li>
+              <li>Drove end-to-end program governance from planning and risk assessment through to delivery</li>
             </ul>
           </div>
         </div>
@@ -213,12 +224,12 @@
           </div>
           <div class="tl-content">
             <div class="tl-company">Mekari</div>
-            <div class="tl-role">TPM – Accounting &amp; Tax</div>
-            <div class="tl-date">Oct 2021 – Feb 2025 &middot; 3 yrs 5 mos</div>
+            <div class="tl-role">Technical Program Manager – Accounting &amp; Tax</div>
+            <div class="tl-date">Oct 2021 – Feb 2025 &middot; 3 yrs 5 mos &middot; Jakarta, Indonesia</div>
             <ul class="tl-bullets">
               <li>Led program delivery for the Inventory &amp; Warehouse Revamp project across planning, development, and rollout phases</li>
               <li>Covered program management across Accounting, Reporting, and Dashboard &amp; Insight product domains</li>
-              <li>Supported establishment of delivery tools, processes, and standards in collaboration with Engineering and Product leads</li>
+              <li>Supported establishment of delivery tools, processes, and standards with Engineering and Product leads</li>
             </ul>
           </div>
         </div>
@@ -229,13 +240,57 @@
             <div class="tl-line"></div>
           </div>
           <div class="tl-content">
-            <div class="tl-company">PrivyID</div>
+            <div class="tl-company">Privy</div>
             <div class="tl-role">Product Manager</div>
-            <div class="tl-date">Nov 2019 – Oct 2021 &middot; 2 yrs</div>
+            <div class="tl-date">Nov 2019 – Oct 2021 &middot; 2 yrs &middot; Yogyakarta, Indonesia</div>
             <ul class="tl-bullets">
               <li>Led the revamp of web and mobile digital signature functionality within the registration process</li>
               <li>Owned development and implementation of quota-based pricing and subscription changes</li>
               <li>Initiated and designed e-stamp and e-materai solutions, expanding product capabilities and supporting regulatory compliance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-spine">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-company">Universitas AMIKOM Yogyakarta</div>
+            <div class="tl-role">Junior Lecturer</div>
+            <div class="tl-date">Jul 2019 – Oct 2021 &middot; 2 yrs 4 mos &middot; Yogyakarta, Indonesia</div>
+            <ul class="tl-bullets">
+              <li>Taught Introduction to Web Programming, E-Commerce, and Introduction to Information Technology</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-spine">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-company">Maxa Creative Lab</div>
+            <div class="tl-role">Project Manager</div>
+            <div class="tl-date">Jul 2019 – Jul 2020 &middot; 1 yr 1 mo</div>
+            <ul class="tl-bullets">
+              <li>Facilitated software development in a project-based company</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-spine">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-company">Ceraproduction.com</div>
+            <div class="tl-role">Software Engineer Intern</div>
+            <div class="tl-date">Aug 2017 – Oct 2017 &middot; 3 mos &middot; Yogyakarta, Indonesia</div>
+            <ul class="tl-bullets">
+              <li>Built an Internal Sales Management System</li>
             </ul>
           </div>
         </div>
@@ -248,10 +303,22 @@
     <!-- EDUCATION -->
     <section class="resume-section">
       <div class="section-label">Education</div>
-      <div class="edu-item">
-        <div class="edu-school">— Please fill in —</div>
-        <div class="edu-degree">Degree · Major</div>
-        <div class="edu-year">Year</div>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-school">Universidad de Murcia</div>
+          <div class="edu-degree">Master's degree, Computer Science</div>
+          <div class="edu-year">Jan 2019 – Jun 2019</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-school">Universitas AMIKOM Yogyakarta</div>
+          <div class="edu-degree">Master's degree, Informatics Engineering</div>
+          <div class="edu-year">2017 – 2019</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-school">Universitas AMIKOM Yogyakarta</div>
+          <div class="edu-degree">Bachelor's degree, Information System</div>
+          <div class="edu-year">2014 – 2017</div>
+        </div>
       </div>
     </section>
 
@@ -263,10 +330,66 @@
       <div class="cert-list">
         <div class="cert-item">
           <div>
-            <div class="cert-name">— Please fill in —</div>
-            <div class="cert-issuer">Issuing organization</div>
+            <div class="cert-name">Professional Scrum Master™ I (PSM I)</div>
+            <div class="cert-issuer">Scrum.org</div>
           </div>
-          <div class="cert-year">Year</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- LANGUAGES -->
+    <section class="resume-section">
+      <div class="section-label">Languages</div>
+      <div>
+        <div class="lang-row">
+          <span class="lang-name">Indonesian</span>
+          <span class="lang-level">Native or Bilingual</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">English</span>
+          <span class="lang-level">Professional Working</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Spanish</span>
+          <span class="lang-level">Elementary</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Japanese</span>
+          <span class="lang-level">Elementary</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- HONORS & AWARDS -->
+    <section class="resume-section">
+      <div class="section-label">Honors &amp; Awards</div>
+      <div>
+        <div class="award-item">
+          <div class="award-name">Best Graduate — 64th Graduation</div>
+          <div class="award-org">Universitas AMIKOM Yogyakarta</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- PUBLICATIONS -->
+    <section class="resume-section">
+      <div class="section-label">Publications</div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div>
+            <div class="pub-name">Improving the Performance of Online Portfolio for Students with Conversion Rate Optimization (CRO) Techniques</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div>
+            <div class="pub-name">Database Migration using Data Synchronization and Transactional Replication</div>
+          </div>
         </div>
       </div>
     </section>
