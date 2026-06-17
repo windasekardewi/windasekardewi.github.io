@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Writing by Winda Sekar Dewi — TPM perspectives on agile, stakeholder management, team dynamics, and program delivery." />
+  <title>Writing · Winda Sekar Dewi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="article.css" />
+  <style>
+    .writing-list { display: flex; flex-direction: column; gap: 0; }
+    .writing-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid var(--border);
+      text-decoration: none;
+    }
+    .writing-item:first-child { border-top: 0.5px solid var(--border); }
+    .writing-item:hover .item-title { color: var(--accent); }
+    .item-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      transition: color 0.15s;
+    }
+    .item-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .page-header { margin-bottom: 2.5rem; }
+    .page-header h1 { font-size: 22px; font-weight: 500; margin-bottom: 0.5rem; }
+    .page-header p { font-size: 14px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="nav-home">Winda Sekar Dewi</a>
+      <a href="../index.html" class="back">← Back to portfolio</a>
+    </nav>
+
+    <div class="page-header">
+      <div class="article-tag">Writing</div>
+      <h1>Sometimes I write</h1>
+      <p>TPM perspectives on agile delivery, stakeholder management, team dynamics, and program operations.</p>
+    </div>
+
+    <div class="writing-list">
+      <a class="writing-item" href="grow-sprint-ownership.html">
+        <div class="item-title">Grow sprint ownership to scrum team</div>
+        <div class="item-desc">How TPMs can progressively hand off sprint accountability and help developers own their own capacity planning.</div>
+      </a>
+      <a class="writing-item" href="engineering-project-lead.html">
+        <div class="item-title">What to expect from an engineering project lead</div>
+        <div class="item-desc">A breakdown of the EPL role — from strategic planning and technical expertise to risk management and stakeholder communication.</div>
+      </a>
+      <a class="writing-item" href="definition-of-done.html">
+        <div class="item-title">Definition of done</div>
+        <div class="item-desc">How to define, apply, and adapt the DoD across different project sizes and sprint structures.</div>
+      </a>
+      <a class="writing-item" href="stakeholders-management.html">
+        <div class="item-title">Stakeholders management</div>
+        <div class="item-desc">A practical framework for understanding, influencing, and generating buy-in from key stakeholders.</div>
+      </a>
+      <a class="writing-item" href="burndown-chart.html">
+        <div class="item-title">Burn down chart as a forecasting tool</div>
+        <div class="item-desc">Using burn down charts beyond progress tracking — as a tool for early risk detection, sprint health review, and stakeholder communication.</div>
+      </a>
+      <a class="writing-item" href="cross-team-project-template.html">
+        <div class="item-title">Cross-team project template</div>
+        <div class="item-desc">A structured approach to planning, tracking, and delivering complex projects across multiple teams.</div>
+      </a>
+      <a class="writing-item" href="book-review-complaint-is-a-gift.html">
+        <div class="item-title">Book review: a complaint is a gift — the TPM perspective</div>
+        <div class="item-desc">Applying Barlow and Møller's complaint framework to stakeholder relationships and program delivery.</div>
+      </a>
+      <a class="writing-item" href="manage-demotivated-team.html">
+        <div class="item-title">How to manage a demotivated team</div>
+        <div class="item-desc">Practical approaches to supporting team mental health, reducing overwhelm, and rebuilding momentum in a fast-paced tech environment.</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

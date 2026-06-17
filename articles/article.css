@@ -1,0 +1,219 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --accent: #D85A30;
+  --accent-light: #FAECE7;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --border: #e8e8e4;
+  --bg: #ffffff;
+  --bg-surface: #f7f6f3;
+  --font: 'Inter', system-ui, sans-serif;
+  --max-width: 680px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f0ede6;
+    --text-muted: #9a9a9a;
+    --border: #2e2e2e;
+    --bg: #111111;
+    --bg-surface: #1a1a1a;
+    --accent-light: #2a1a14;
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 0 1.5rem;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid var(--border);
+  align-items: center;
+}
+
+nav .nav-home {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  margin-right: auto;
+  text-decoration: none;
+}
+
+nav .nav-home:hover { color: var(--accent); }
+
+nav .back {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+nav .back:hover { color: var(--accent); text-decoration: none; }
+
+.article-meta {
+  margin-bottom: 2.5rem;
+}
+
+.article-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.article-meta h1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.article-meta .byline {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--border);
+  margin: 2rem 0;
+}
+
+.article-body h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  margin: 2rem 0 0.75rem;
+  line-height: 1.3;
+}
+
+.article-body h3 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin: 1.5rem 0 0.5rem;
+}
+
+.article-body p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.article-body ul, .article-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-body li {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+}
+
+.article-body strong { color: var(--text); font-weight: 500; }
+
+.article-body blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-surface);
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.article-body .callout {
+  background: var(--accent-light);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 1.5rem 0;
+}
+
+.article-body th {
+  background: var(--bg-surface);
+  font-weight: 500;
+  color: var(--text);
+  text-align: left;
+  padding: 8px 12px;
+  border: 0.5px solid var(--border);
+}
+
+.article-body td {
+  padding: 8px 12px;
+  border: 0.5px solid var(--border);
+  color: var(--text-muted);
+  vertical-align: top;
+}
+
+.article-body .references {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.article-body .references h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.article-body .references ul {
+  list-style: none;
+  padding: 0;
+}
+
+.article-body .references li {
+  font-size: 13px;
+  margin-bottom: 0.4rem;
+}
+
+.back-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--border);
+  font-size: 13px;
+}

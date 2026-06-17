@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Definition of Done · Winda Sekar Dewi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="article.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="nav-home">Winda Sekar Dewi</a>
+      <a href="index.html" class="back">← All writing</a>
+    </nav>
+
+    <div class="article-meta">
+      <div class="article-tag">Agile</div>
+      <h1>Definition of done</h1>
+      <div class="byline">By Winda Sekar Dewi</div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="article-body">
+
+      <h2>Overview</h2>
+      <ol>
+        <li>When the Definition of Done is complete, it defines all steps needed to deliver a finished increment — creating feedback on both the product and the process within the sprint.</li>
+        <li>One purpose of the DoD is to guarantee that things work well and meet basic technical requirements. It is typically led by the Scrum Master or the head of engineering, but it should be a collaborative exercise. Without input and approval from product, QA, and other stakeholders, there will not be widespread acceptance of what "done" actually means.</li>
+        <li>Meeting the DoD ensures quality. It lowers rework by preventing user stories that do not meet the definition from being promoted to higher-level environments, and prevents features from being delivered to users before they are truly ready.</li>
+      </ol>
+
+      <h2>Definition of done in capacity estimation</h2>
+      <p>Projects with a development effort of more than 6 weeks — considered large-sized in capacity estimation — can be divided into several projects to have clearer delivery visibility.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th>Chunk-able</th>
+            <th>Releasable</th>
+            <th>Able to deliver value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Deliver value partially</td>
+            <td>YES</td>
+            <td>YES</td>
+            <td>YES</td>
+          </tr>
+          <tr>
+            <td>Release (not yet rolled out) partially</td>
+            <td>YES</td>
+            <td>YES</td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>Big bang release</td>
+            <td>YES</td>
+            <td>NO</td>
+            <td>NO</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Deliver value partially</h3>
+      <p>The project can be divided into several releases based on acceptance criteria, without breaking the user flow. Example — Active/Inactive Warehouse:</p>
+      <ul>
+        <li><strong>Phase 1:</strong> Index and details — user can inactivate a warehouse, view inactive warehouse list, and see all warehouses in select dropdowns.</li>
+        <li><strong>Phase 2:</strong> Validation in transactions — validation of inactive warehouses in inventory, sales, and purchase transactions.</li>
+      </ul>
+
+      <h3>Released or rolled out partially</h3>
+      <p>Projects that cannot be divided by user flow can be split by module with a feature toggle. Each module can be released to staging or production and toggled on for specific users during testing. Once tested and agreed upon by all stakeholders (engineering, QA, product, management), the module can be marked as done.</p>
+
+      <h2>Sprint goal in sprint</h2>
+      <p>After capacity estimation, it is ideal to have more than 80% of the PRD, RFC, engineering PIC, resource count, and task breakdown ready before sprint planning. This allows creation of a detailed timeline based on initiative priority and mapping of each initiative to specific sprints in the quarter.</p>
+      <p>Example — an initiative with 8 weeks of total development and testing effort, where everything must be done before testing and rollout:</p>
+
+      <ul>
+        <li><strong>Sprint 1:</strong> Tasks A–C in week one, Tasks D–F in week two. Sprint goal: Dev Done. Conduct sprint review and gather feedback.</li>
+        <li><strong>Sprint 2:</strong> End-to-end testing of Tasks A–F. Bug fixing (may carry over to week one of the next sprint). Sprint goal: Bug Fix Dev Done.</li>
+        <li><strong>Sprint 3:</strong> Continue bug fixes. Retest fixed bugs. Sprint goal: Passed QA.</li>
+        <li><strong>Sprint 4:</strong> Deploy to production and roll out.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Common sprint goal stages used in practice:</strong>
+        <ul style="margin-top: 0.5rem;">
+          <li>Dev Done (FE and/or BE without integration)</li>
+          <li>Passed QA (tested on staging)</li>
+          <li>Released without rolling out</li>
+          <li>Rolled out</li>
+          <li>RFC ready to review</li>
+          <li>RFC passed review</li>
+        </ul>
+      </div>
+
+      <h2>Balancing DoD, capacity, and timeframe</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Capacity</th>
+            <th>Timeframe</th>
+            <th>DoD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fixed</td>
+            <td>Fixed</td>
+            <td>DoD should be flexible</td>
+          </tr>
+          <tr>
+            <td>Needs expansion or new hiring</td>
+            <td>Fixed</td>
+            <td>Fixed</td>
+          </tr>
+          <tr>
+            <td>Fixed</td>
+            <td>Revisit (longer or shorter) — if more than 4 weeks, the task may not be worth solving</td>
+            <td>Fixed</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="references">
+        <h3>References</h3>
+        <ul>
+          <li><a href="https://www.atlassian.com/blog/jira/8-steps-to-a-definition-of-done-in-jira" target="_blank" rel="noopener">8 steps to a definition of done in Jira — Atlassian</a></li>
+          <li><a href="https://www.productplan.com/learn/agile-definition-of-done/" target="_blank" rel="noopener">The Definition of Done: What Product Managers Need to Know — ProductPlan</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="back-bottom">
+      <a href="index.html">← Back to all writing</a>
+    </div>
+  </div>
+</body>
+</html>
