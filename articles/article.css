@@ -64,13 +64,14 @@ nav .nav-home:hover { color: var(--accent); }
 
 nav .back {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--accent);
   display: flex;
   align-items: center;
   gap: 4px;
+  text-decoration: none;
 }
 
-nav .back:hover { color: var(--accent); text-decoration: none; }
+nav .back:hover { text-decoration: underline; }
 
 .article-meta {
   margin-bottom: 2.5rem;

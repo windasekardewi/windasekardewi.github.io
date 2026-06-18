@@ -327,6 +327,16 @@ footer {
   padding-bottom: 3rem;
 }
 
+.site-cta {
+  font-size: 13px;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+.site-cta:hover { text-decoration: underline; }
+
 @media (max-width: 520px) {
   .stats { grid-template-columns: 1fr 1fr; }
   .stats .stat:last-child { grid-column: span 2; }
