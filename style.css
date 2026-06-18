@@ -61,6 +61,10 @@ nav a {
 
 nav a:hover { color: var(--accent); }
 nav .nav-name { font-weight: 500; color: var(--text); margin-right: auto; }
+nav .nav-home { font-size: 13px; font-weight: 500; color: var(--text); margin-right: auto; text-decoration: none; }
+nav .nav-home:hover { color: var(--accent); }
+nav .back { font-size: 13px; color: var(--accent); display: flex; align-items: center; gap: 4px; text-decoration: none; }
+nav .back:hover { text-decoration: underline; }
 
 .hero { margin-bottom: 3.5rem; }
 
