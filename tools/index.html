@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reusable templates, trackers, and automation resources by Winda Sekar Dewi for technical program managers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://windasekardewi.github.io/tools/" />
+  <meta property="og:title" content="Tools · Winda Sekar Dewi" />
+  <meta property="og:description" content="Reusable templates, trackers, and automation resources for technical program managers." />
+  <meta property="og:image" content="https://windasekardewi.github.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tools · Winda Sekar Dewi" />
+  <meta name="twitter:description" content="Reusable templates, trackers, and automation resources for technical program managers." />
+  <meta name="twitter:image" content="https://windasekardewi.github.io/og-image.png" />
+  <title>Tools · Winda Sekar Dewi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../articles/article.css" />
+  <style>
+    .tools-list { display: flex; flex-direction: column; gap: 0; }
+    .tool-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid var(--border);
+      text-decoration: none;
+    }
+    .tool-item:first-child { border-top: 0.5px solid var(--border); }
+    .tool-item:hover .item-title { color: var(--accent); }
+    .item-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      transition: color 0.15s;
+    }
+    .item-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .item-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .page-header { margin-bottom: 2.5rem; }
+    .page-header h1 { font-size: 22px; font-weight: 500; margin-bottom: 0.5rem; }
+    .page-header p { font-size: 14px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="nav-home">Winda Sekar Dewi</a>
+      <a href="../index.html" class="back">← Back to portfolio</a>
+    </nav>
+
+    <div class="page-header">
+      <div class="article-tag">Tools</div>
+      <h1>Templates &amp; tools</h1>
+      <p>Reusable templates, trackers, and automation resources I use in my day-to-day work as a TPM.</p>
+    </div>
+
+    <div class="tools-list">
+      <a class="tool-item" href="../articles/cross-team-project-template.html">
+        <div class="item-title">Cross-team project template</div>
+        <div class="item-desc">A reusable Excel template for running cross-team projects, covering capacity allocation, roadmap, RACI, risk tracking, and more.</div>
+        <div class="item-meta">Excel · 10 sheets</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
