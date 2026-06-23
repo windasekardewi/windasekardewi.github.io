@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How I built an AI skill that reads live Jira and Bitbucket data to generate a program health report automatically, cutting Monday sync prep from an hour to 15 minutes." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://windasekardewi.github.io/tools/program-health-skill.html" />
+  <meta property="og:title" content="Monday sync used to cost me hours · Winda Sekar Dewi" />
+  <meta property="og:description" content="How I built an AI skill that reads live Jira and Bitbucket data to generate a program health report automatically, cutting Monday sync prep from an hour to 15 minutes." />
+  <meta property="og:image" content="https://windasekardewi.github.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Monday sync used to cost me hours · Winda Sekar Dewi" />
+  <meta name="twitter:description" content="How I built an AI skill that reads live Jira and Bitbucket data to generate a program health report automatically, cutting Monday sync prep from an hour to 15 minutes." />
+  <meta name="twitter:image" content="https://windasekardewi.github.io/og-image.png" />
+  <title>Monday sync used to cost me hours · Winda Sekar Dewi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../articles/article.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="nav-home">Winda Sekar Dewi</a>
+      <a href="index.html" class="back">← All tools</a>
+    </nav>
+
+    <div class="article-meta">
+      <div class="article-tag">Automation</div>
+      <h1>Monday sync used to cost me hours</h1>
+      <div class="byline">By Winda Sekar Dewi</div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="article-body">
+
+      <p>Every Monday morning, I had one job before the sync started: figure out which of our active initiatives was on track, which one was quietly on fire, and what someone needed to decide before it got worse.</p>
+
+      <p>For a long time, that meant opening Jira, clicking through epics one by one, cross-referencing notes, and assembling a Confluence update by hand. About an hour of work. Accurate at 9 AM, stale by 11.</p>
+
+      <p>I got tired of that. So I built something better.</p>
+
+      <p>I packaged an AI-assisted workflow (I call it a "skill") that reads live project data and produces a program health report automatically. It does not just count tasks by status. It reads through the comment threads on every epic and child task, looking for things ticket status never shows you: a blocker mentioned in passing, a decision deferred mid-thread, an engineer flagging something without ever moving the ticket. It also cross-references commit activity and PR review age from the code repository, so if a ticket has been "In Progress" for a week with no code moving, that surfaces too.</p>
+
+      <p>The output is ready before the sync starts: initiative name, team, status, progress percentage, target date. Risk flags with a named owner and the specific action needed. An actions table so everyone knows what they need to decide before next week.</p>
+
+      <div class="download-box">
+        <div class="download-box-left">
+          <div class="download-title">Program Health Skill</div>
+          <div class="download-meta">Markdown · Claude skill for Jira + Bitbucket · works with any Atlassian cloud instance</div>
+        </div>
+        <a href="../downloads/program-health-skill.md" download class="download-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+      </div>
+
+      <h2>What the skill does, technically</h2>
+
+      <p>Six steps under the hood:</p>
+      <ol>
+        <li>Takes the program or epic key as input.</li>
+        <li>Queries all child epics via the project tracker API.</li>
+        <li>Fetches all child tasks per epic, counts by status, then deep-dives into comments on both the epic and each task. Looking for blockers mentioned in passing, decisions deferred mid-thread, engineers flagging issues without moving a ticket.</li>
+        <li>Pulls code repository data: PR counts, review age, and commit activity per initiative, cross-referenced against what the tracker says is happening.</li>
+        <li>Applies detection rules: stuck tickets (no status change in N days), keyword-scanned blockers in comments and transitions, PRs sitting in review past a set threshold, unassigned tasks on active epics.</li>
+        <li>Writes the full report to the team wiki.</li>
+      </ol>
+
+      <h2>What actually changed</h2>
+      <ul>
+        <li>Sync prep time: from about an hour to about 15 minutes.</li>
+        <li>Every risk flag has a named owner. "Will be followed up" is gone.</li>
+        <li>I stopped asking "what is the status?" I started asking "what needs to be decided before this gets worse?" That is a very different kind of meeting.</li>
+        <li>Onboarding to a new team used to take weeks. The same skill helped me read multiple quarters of delivery history, incident patterns, and team context before my first sync. I was ready in days, not weeks.</li>
+      </ul>
+
+      <h2>What it did not fix</h2>
+
+      <p>The output is only as good as the data. Epics with no child tasks, initiatives with no delivery date, tickets that have never had a status change: all of that creates gaps. Honestly, one of the most useful things this skill did was show me exactly where our data discipline was weak.</p>
+
+      <p>It also does not replace judgment. The skill can flag that an initiative is at 30% with three weeks left. It cannot know whether the team already agreed to descope it last Friday. That kind of context still lives with people. The artifact creates structure for the conversation, not the conversation itself.</p>
+
+      <h2>If you want to build this for your team</h2>
+
+      <p>The version I built is wired to my specific context. If you are adapting it, here is what you will actually need to change.</p>
+
+      <h3>Your team structure and naming</h3>
+      <p>The skill needs to know how your org names things: squad names, team labels, initiative types. If your project tracker has custom fields for health status, delivery dates, or criticality, those need to be connected. Better yet, set up the skill to discover them from field metadata before it starts pulling data, so you are not hardcoding IDs that break when someone renames a field.</p>
+
+      <h3>Your toolchain</h3>
+      <p>I use Jira and Bitbucket, with output going to Confluence. If your team runs on GitHub and Notion, or Linear and Slack, the connectors change. The logic does not.</p>
+
+      <h3>Your thresholds</h3>
+      <p>"Stuck after 7 days" works for my team's cadence. A team on 1-week sprints might flag at 4 days. A team doing continuous delivery might not use sprints at all. The PR review age threshold, the velocity formula, the overdue logic: all of it should reflect how your team actually works, not a generic default.</p>
+
+      <h3>Your hierarchy</h3>
+      <p>Some orgs are flat: epics and tasks. Others have programs containing epics containing stories containing subtasks. Where the skill enters and how deep it goes depends on where your "program" actually lives in that structure.</p>
+
+      <h3>Your audience</h3>
+      <p>A report for engineers should be precise and short. A report for a VP or a business stakeholder needs more narrative and less tracker jargon. The recommended actions section especially changes depending on who is reading. Build the writing style into the skill so you are not editing every output before you send it.</p>
+
+      <p>The first version does not need to be perfect. It just needs to exist, so you can stop spending an hour every Monday doing something a machine can do in two minutes.</p>
+
+    </div>
+
+    <div class="back-bottom">
+      <a href="index.html">← Back to all tools</a>
+    </div>
+  </div>
+</body>
+</html>
