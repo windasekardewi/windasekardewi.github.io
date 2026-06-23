@@ -54,28 +54,25 @@ nav {
   margin-bottom: 3rem;
   border-bottom: 0.5px solid var(--border);
   align-items: center;
+  flex-wrap: wrap;
 }
 
-nav .nav-home {
+nav a {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+nav a:hover { color: var(--accent); }
+
+nav .nav-name {
   font-size: 13px;
   font-weight: 500;
   color: var(--text);
   margin-right: auto;
   text-decoration: none;
 }
-
-nav .nav-home:hover { color: var(--accent); }
-
-nav .back {
-  font-size: 13px;
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  text-decoration: none;
-}
-
-nav .back:hover { text-decoration: underline; }
 
 .article-meta {
   margin-bottom: 2.5rem;
